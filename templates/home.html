@@ -1,3 +1,74 @@
-<h1>
-    hello
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>House Price Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body style="background-color:#f9f6d6;">
+ <div class="login">
+<center>	<h1 style="color:Tomato;">Boston House Price Prediction</h1> </center><br>
+
+<center>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text"  size="30" width="48" name="CRIM" placeholder="CRIM" required="required" style="background-color:#dffcde;" /><br><br>
+    	<input type="text" size="30" name="ZN" placeholder="ZN" required="required" style="background-color:#dffcde;" /><br><br>
+        <input type="text"  size="30" name="INDUS" placeholder="INDUS" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="CHAS" placeholder="CHAS" required="required" style="background-color:#dffcde;" /><br><br>
+        <input type="text" size="30" name="NOX" placeholder="NOX" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="RM" placeholder="RM" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="Age" placeholder="Age" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="DIS" placeholder="DIS" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="RAD" placeholder="RAD" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="TAX" placeholder="TAX" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="PTRATIO" placeholder="PTRATIO" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30" name="B" placeholder="B" required="required" style="background-color:#dffcde;"/><br><br>
+        <input type="text" size="30"name="LSTAT" placeholder="LSTAT" required="required" style="background-color:#dffcde;"/><br><br>
+
+       
+
+        <button style="height:30px;width:150px" type="Predict" size="45" style="background-color: #04AA6D;"  >Predict</button>
+    </form>
+</center>
+   <br>
+   <br>
+  
+   
+ </div><br><br>
+ <center><h1>
+ {{prediction_text}}
+ <h1>
+ </center>
+ <br><br>
+ <div>
+  
+       <h2> Attribute Information (in order): </h2>
+       <h3><ul>
+
+      <li> - CRIM     per capita crime rate by town </li> <br>
+      <li>- ZN       proportion of residential land zoned for lots over 25,000 sq.ft.</li><br>
+      <li> - CHAS     Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)</li><br>
+      <li>- NOX      nitric oxides concentration (parts per 10 million) </li><br>
+      <li> - RM       average number of rooms per dwelling </li><br>
+      <li>- AGE      proportion of owner-occupied units built prior to 1940 </li><br>
+      <li>- DIS      weighted distances to five Boston employment centres </li><br>
+      <li> - RAD      index of accessibility to radial highways </li><br>
+      <li>- TAX      full-value property-tax rate per $10,000 </li> <br>
+      <li>- PTRATIO  pupil-teacher ratio by town </li><br>
+      <li>- B        1000(Bk - 0.63)^2 where Bk is the proportion of black people by town </li><br>
+      <li> - LSTAT    % lower status of the population </li><br>
+    </h3> </ul>
+
+ </div>
+
+
+</body>
+</html>
